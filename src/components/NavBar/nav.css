@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .sidebar a.active {
+    @apply bg-purple-300 text-black;
+  }
+  .cart-count {
+    @apply absolute bottom-full translate-y-2/3 -right-2 text-xs h-5 w-5 bg-primaryColor flex items-center justify-center rounded-full text-white;
+  }
+}

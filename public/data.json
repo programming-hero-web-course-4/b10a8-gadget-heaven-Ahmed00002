@@ -1,0 +1,173 @@
+[
+  {
+    "category_name": "Laptop",
+    "products": [
+      {
+        "product_id": "laptop_001",
+        "product_title": "Dell XPS 13",
+        "product_image": "https://i.ibb.co.com/hF5DcTc/Untitled-design-2-removebg-preview.png",
+        "category": "Laptop",
+        "price": 999.99,
+        "description": "A premium ultrabook with Intel Core i7 and 16GB RAM.",
+        "specification": [
+          "Intel Core i7",
+          "16GB RAM",
+          "512GB SSD",
+          "13.3-inch display"
+        ],
+        "availability": true,
+        "rating": 4.7
+      },
+      {
+        "product_id": "laptop_002",
+        "product_title": "Apple MacBook Pro 14",
+        "product_image": "https://i.ibb.co.com/VCgk7ZB/Untitled-design-1-removebg-preview.png",
+        "category": "Laptop",
+        "price": 1499.99,
+        "description": "Apple's powerful MacBook with M1 Pro chip and 16GB RAM.",
+        "specification": [
+          "M1 Pro chip",
+          "16GB RAM",
+          "1TB SSD",
+          "14-inch Retina display"
+        ],
+        "availability": true,
+        "rating": 4.9
+      },
+      {
+        "product_id": "laptop_003",
+        "product_title": "HP Spectre x360",
+        "product_image": "https://example.com/hp_spectre_x360.jpg",
+        "category": "Laptop",
+        "price": 1299.99,
+        "description": "Convertible laptop with Intel Core i7, 16GB RAM, and 512GB SSD.",
+        "specification": [
+          "Intel Core i7",
+          "16GB RAM",
+          "512GB SSD",
+          "13.3-inch display"
+        ],
+        "availability": true,
+        "rating": 4.6
+      },
+      {
+        "product_id": "laptop_004",
+        "product_title": "Lenovo ThinkPad X1 Carbon",
+        "product_image": "https://example.com/lenovo_thinkpad_x1.jpg",
+        "category": "Laptop",
+        "price": 1199.99,
+        "description": "Ultra-light laptop with Intel Core i7 and 16GB RAM.",
+        "specification": [
+          "Intel Core i7",
+          "16GB RAM",
+          "512GB SSD",
+          "14-inch Full HD display"
+        ],
+        "availability": true,
+        "rating": 4.8
+      },
+      {
+        "product_id": "laptop_005",
+        "product_title": "Asus ZenBook 14",
+        "product_image": "https://example.com/asus_zenbook_14.jpg",
+        "category": "Laptop",
+        "price": 899.99,
+        "description": "Compact ultrabook with AMD Ryzen 5, 8GB RAM, and 256GB SSD.",
+        "specification": [
+          "AMD Ryzen 5",
+          "8GB RAM",
+          "256GB SSD",
+          "14-inch Full HD display"
+        ],
+        "availability": true,
+        "rating": 4.5
+      },
+      {
+        "product_id": "laptop_006",
+        "product_title": "Microsoft Surface Laptop 4",
+        "product_image": "https://example.com/surface_laptop_4.jpg",
+        "category": "Laptop",
+        "price": 1299.0,
+        "description": "Sleek laptop with Intel Core i7, 16GB RAM, and 512GB SSD.",
+        "specification": [
+          "Intel Core i7",
+          "16GB RAM",
+          "512GB SSD",
+          "13.5-inch PixelSense display"
+        ],
+        "availability": true,
+        "rating": 4.6
+      }
+    ]
+  },
+  {
+    "category_name": "Mobile",
+    "products": [
+      {
+        "product_id": "mobile_001",
+        "product_title": "Apple iPhone 15",
+        "product_image": "https://example.com/iphone_15.jpg",
+        "category": "Mobile",
+        "price": 1099.99,
+        "description": "Latest iPhone with A17 Bionic chip and 128GB storage.",
+        "specification": [
+          "A17 Bionic chip",
+          "128GB storage",
+          "6.1-inch Super Retina display"
+        ],
+        "availability": true,
+        "rating": 4.8
+      },
+      {
+        "product_id": "mobile_002",
+        "product_title": "Samsung Galaxy S24",
+        "product_image": "https://example.com/galaxy_s24.jpg",
+        "category": "Mobile",
+        "price": 999.99,
+        "description": "High-performance smartphone with Exynos 2200 and 256GB storage.",
+        "specification": [
+          "Exynos 2200",
+          "256GB storage",
+          "6.2-inch Dynamic AMOLED display"
+        ],
+        "availability": true,
+        "rating": 4.7
+      }
+    ]
+  },
+  {
+    "category_name": "Gadgets",
+    "products": [
+      {
+        "product_id": "gadget_001",
+        "product_title": "Sony WH-1000XM5",
+        "product_image": "https://example.com/sony_wh_1000xm5.jpg",
+        "category": "Gadgets",
+        "price": 349.99,
+        "description": "Noise-canceling wireless headphones with superior sound quality.",
+        "specification": [
+          "Noise-canceling",
+          "30-hour battery life",
+          "Bluetooth 5.0"
+        ],
+        "availability": true,
+        "rating": 4.9
+      },
+      {
+        "product_id": "gadget_002",
+        "product_title": "Amazon Echo Dot 5th Gen",
+        "product_image": "https://example.com/echo_dot_5th_gen.jpg",
+        "category": "Gadgets",
+        "price": 79.99,
+        "description": "Smart speaker with Alexa voice control and improved sound.",
+        "specification": [
+          "Alexa built-in",
+          "Smart home integration",
+          "Bluetooth connectivity"
+        ],
+        "availability": true,
+        "rating": 4.6
+      }
+    ]
+  }
+]
