@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import { gadgetDtls } from "../components/contexts/Contexts";
+import { Link } from "react-router-dom";
 
 function GadgetDetails() {
   const data = useContext(gadgetDtls);
-  const { product_title, price, product_image } = data;
+  const { product_title, price, product_image, product_id, category } = data;
   return (
     <>
       <div className="border-[1px] rounded-xl p-5 shadow-lg cursor-pointer hover:scale-105 transition-all">
@@ -18,9 +19,11 @@ function GadgetDetails() {
           <h1 className="text-xl font-semibold">{product_title}</h1>
           <p className="text-paraColor">Price: {price}$</p>
           <div className="flex-grow flex items-end justify-start">
-            <button className="px-4 py-2 rounded-full border-[1px] border-purple-600 text-purple-500">
-              View Details
-            </button>
+            <Link to={`/${category}/${product_id}`}>
+              <button className="px-4 py-2 rounded-full border-[1px] border-purple-600 text-purple-500">
+                View Details
+              </button>
+            </Link>
           </div>
         </div>
       </div>

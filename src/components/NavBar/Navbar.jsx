@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useParams } from "react-router-dom";
 import { FaOpencart } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
 import "./nav.css";
@@ -7,7 +7,11 @@ import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const location = useLocation();
+  const param = useParams();
 
+  const detailsPath =
+    location.pathname === `/${param.categoryName}/${param.id}` ? true : false;
+  console.log(detailsPath);
   const [home, setHome] = useState(true);
   useEffect(() => {
     if (
@@ -29,12 +33,16 @@ export default function Navbar() {
       <nav className="center px-8">
         <div
           className={`px-1 pt-1 ${
-            home && "border-x-[1px] border-t-[1px] rounded-t-2xl"
+            home &&
+            !detailsPath &&
+            "border-x-[1px] border-t-[1px] rounded-t-2xl"
           }  center mt-4`}
         >
           <div
             className={`grid grid-cols-3 items-center justify-center   ${
-              home ? "bg-primaryColor text-white" : "bg-white text-black"
+              home && !detailsPath
+                ? "bg-primaryColor text-white"
+                : "bg-white text-black"
             } py-6 rounded-t-xl px-12`}
           >
             <div>

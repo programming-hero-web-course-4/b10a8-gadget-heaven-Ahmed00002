@@ -23,4 +23,7 @@
   body {
     @apply font-sora;
   }
+  .categories a.active button {
+    @apply bg-primaryColor text-white;
+  }
 }
