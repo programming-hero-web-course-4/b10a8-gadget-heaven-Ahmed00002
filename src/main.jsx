@@ -5,6 +5,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./components/Root/Root";
 import Error from "./components/ErrorComponent/Error";
 import Hero from "./components/HeroSection/Hero";
+import Dashboard from "./components/Dashboard/Dashboard";
+import Statistics from "./components/Statistics/Statistics";
 
 const router = createBrowserRouter([
   {
@@ -14,11 +16,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/statistics",
-        element: <p>hello from abut section</p>,
+        element: <Statistics />,
       },
       {
         path: "/dashboard",
-        element: <p>hello from abut dashboard</p>,
+        element: <Dashboard></Dashboard>,
+      },
+      {
+        path: "/",
+        element: <Hero />,
       },
     ],
   },

@@ -6,7 +6,7 @@
 
 @layer utilities {
   .center {
-    @apply max-w-[1440px] mx-auto px-4 md:px-10 lg:px-28;
+    @apply max-w-[1440px] mx-auto px-4 md:px-8 lg:px-24;
   }
   nav a.active {
     @apply text-primaryColor font-bold;
@@ -16,5 +16,11 @@
   }
   .category-btn {
     @apply bg-gray-200 rounded-full px-5 py-2 text-left;
+  }
+  .footer-links-container a:hover {
+    text-decoration: underline;
+  }
+  body {
+    @apply font-sora;
   }
 }

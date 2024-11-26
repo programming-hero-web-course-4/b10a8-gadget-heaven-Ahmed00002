@@ -3,7 +3,6 @@ import { gadgetDtls } from "../components/contexts/Contexts";
 
 function GadgetDetails() {
   const data = useContext(gadgetDtls);
-  console.log(data);
   const { product_title, price, product_image } = data;
   return (
     <>
