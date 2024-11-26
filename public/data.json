@@ -53,7 +53,7 @@
       {
         "product_id": "laptop_004",
         "product_title": "Lenovo ThinkPad X1 Carbon",
-        "product_image": "https://example.com/lenovo_thinkpad_x1.jpg",
+        "product_image": "https://i.ibb.co.com/wN3LZhY/thinkpad.png",
         "category": "Laptop",
         "price": 1199.99,
         "description": "Ultra-light laptop with Intel Core i7 and 16GB RAM.",
@@ -69,7 +69,7 @@
       {
         "product_id": "laptop_005",
         "product_title": "Asus ZenBook 14",
-        "product_image": "https://example.com/asus_zenbook_14.jpg",
+        "product_image": "https://i.ibb.co.com/9hqz4vh/asus.png",
         "category": "Laptop",
         "price": 899.99,
         "description": "Compact ultrabook with AMD Ryzen 5, 8GB RAM, and 256GB SSD.",
@@ -85,7 +85,7 @@
       {
         "product_id": "laptop_006",
         "product_title": "Microsoft Surface Laptop 4",
-        "product_image": "https://example.com/surface_laptop_4.jpg",
+        "product_image": "https://i.ibb.co.com/3W4TCHk/surface.png",
         "category": "Laptop",
         "price": 1299.0,
         "description": "Sleek laptop with Intel Core i7, 16GB RAM, and 512GB SSD.",
@@ -106,7 +106,7 @@
       {
         "product_id": "mobile_001",
         "product_title": "Apple iPhone 15",
-        "product_image": "https://example.com/iphone_15.jpg",
+        "product_image": "https://i.ibb.co.com/2PNKFNY/ip-15.png",
         "category": "Mobile",
         "price": 1099.99,
         "description": "Latest iPhone with A17 Bionic chip and 128GB storage.",
@@ -121,7 +121,7 @@
       {
         "product_id": "mobile_002",
         "product_title": "Samsung Galaxy S24",
-        "product_image": "https://example.com/galaxy_s24.jpg",
+        "product_image": "https://i.ibb.co.com/k3S6Zps/sm-s24.png",
         "category": "Mobile",
         "price": 999.99,
         "description": "High-performance smartphone with Exynos 2200 and 256GB storage.",
@@ -141,7 +141,7 @@
       {
         "product_id": "gadget_001",
         "product_title": "Sony WH-1000XM5",
-        "product_image": "https://example.com/sony_wh_1000xm5.jpg",
+        "product_image": "https://i.ibb.co.com/Nr2j7n3/headphone.png",
         "category": "Gadgets",
         "price": 349.99,
         "description": "Noise-canceling wireless headphones with superior sound quality.",
@@ -156,7 +156,7 @@
       {
         "product_id": "gadget_002",
         "product_title": "Amazon Echo Dot 5th Gen",
-        "product_image": "https://example.com/echo_dot_5th_gen.jpg",
+        "product_image": "https://i.ibb.co.com/rQM8k4M/echo.png",
         "category": "Gadgets",
         "price": 79.99,
         "description": "Smart speaker with Alexa voice control and improved sound.",
