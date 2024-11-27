@@ -8,4 +8,4 @@ const useTitle = (location) => {
   }
 };
 
-export default useTitle;
+export { useTitle };

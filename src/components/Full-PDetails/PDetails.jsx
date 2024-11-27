@@ -1,37 +1,55 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import ReactStars from "react-rating-stars-component";
 import { useLoaderData, useParams } from "react-router-dom";
 import { IoMdStarOutline, IoMdStar, IoMdStarHalf } from "react-icons/io";
 import { CiHeart } from "react-icons/ci";
 import { FaOpencart } from "react-icons/fa";
+import { userData } from "../contexts/Contexts";
 
 function PDetails() {
   const param = useParams();
-  console.log(param);
   //   const data = useLoaderData();
   const [data, setData] = useState(useLoaderData());
   const pList = data.filter(
     (category) => category.category_name == param.categoryName
   );
-  console.log(pList[0]);
-  console.log(param.id);
   const mainData = pList[0].products.filter(
     (data) => data.product_id === param.id
   );
-  console.log(mainData[0]);
   const {
     product_title,
     product_image,
     price,
-    category,
+    // category,
     description,
     specification,
     availability,
     rating,
   } = mainData[0];
 
-  // rating
+  // context api
+  const userDatas = useContext(userData);
+  const { cart, wishlist, updateOrGetCart, updateOrGetWishlist } = userDatas;
 
+  // cart button on click
+  const addToCart = () => {
+    updateOrGetCart(mainData[0]);
+  };
+
+  // add data to the wishlist
+  const addToWishlist = () => {
+    updateOrGetWishlist(mainData[0]);
+  };
+
+  /**
+   * checking the wishlist
+   * if the item exist in the list
+   * them the wishlist button will be disabled
+   * else it will be normal
+   * */
+  if (wishlist.length != 0) {
+    wishlist.map((data) => console.log(data));
+  }
   return (
     <>
       {/* dashboard section header */}
@@ -53,14 +71,14 @@ function PDetails() {
         {/* product details */}
         <div className="center w-4/6 bg-white shadow-md rounded-xl -translate-x-1/2 grid grid-cols-12 gap-4 p-8 absolute top-1/2 left-1/2">
           {/* product image */}
-          <div className="col-span-5 flex justify-center items-center bg-purple-50 rounded-2xl">
+          <div className="col-span-6 flex justify-center items-center bg-purple-50 rounded-2xl">
             <img
               className="aspect-video object-cover"
               src={product_image}
               alt={`demo image of ${product_title}`}
             />
           </div>
-          <div className="col-span-7 space-y-4">
+          <div className="col-span-6 space-y-4">
             <h1 className="text-2xl font-bold">{product_title}</h1>
             <p className="font-medium text-lg">Price: {price}</p>
 
@@ -113,10 +131,16 @@ function PDetails() {
             </div>
             {/* buttons */}
             <div className="flex items-center  gap-4">
-              <button className="flex items-center justify-center gap-3 btn bg-primaryColor rounded-full hover:bg-transparent hover:text-primaryColor hover:border-primaryColor text-white">
+              <button
+                className="flex items-center justify-center gap-3 btn bg-primaryColor rounded-full hover:bg-transparent hover:text-primaryColor hover:border-primaryColor text-white"
+                onClick={addToCart}
+              >
                 Add To Cart <FaOpencart />
               </button>
-              <button className="btn  btn-circle text-2xl bg-transparent border-paraColor hover:bg-pink-500 hover:text-white hover:border-none">
+              <button
+                onClick={addToWishlist}
+                className="btn  btn-circle text-2xl bg-transparent border-paraColor hover:bg-pink-500 hover:text-white hover:border-none"
+              >
                 <CiHeart />
               </button>
             </div>

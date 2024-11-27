@@ -1,14 +1,14 @@
 import "../../index.css";
 import cameraImg from "../../assets/banner.jpg";
 import Gadgets from "../AllGadgets/Gadgets";
-import useTitle from "./customHook/customHook";
+import { useTitle } from "./customHook/customHook";
 import { useLoaderData, useLocation } from "react-router-dom";
 import { AllGadgetsData } from "../contexts/Contexts";
+// import { userCart } from "../contexts/Contexts";
 function Hero() {
   const location = useLocation();
   useTitle(location.pathname);
   const gadgetsData = useLoaderData();
-  console.log(gadgetsData);
   return (
     <>
       <div className="center px-8">

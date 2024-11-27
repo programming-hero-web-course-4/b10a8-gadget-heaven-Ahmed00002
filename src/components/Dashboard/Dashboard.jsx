@@ -1,10 +1,39 @@
 import { GoSortDesc } from "react-icons/go";
 import { useLocation } from "react-router-dom";
-import useTitle from "../HeroSection/customHook/customHook";
+import { useTitle } from "../HeroSection/customHook/customHook";
+import AllWishlist from "./All-Wishlist/AllWishlist";
+import { useContext, useState } from "react";
+import { userData } from "../contexts/Contexts";
+import Carts from "./All-carts/Carts";
 function Dashboard() {
   const location = useLocation();
-
+  // it will change the website title dynamically
   useTitle(location.pathname);
+
+  // getting user data
+  const userDatas = useContext(userData);
+  const { totalCartAmount } = userDatas;
+
+  // toggle to cart to wishlist menu
+  const [toggle, setToggle] = useState(true);
+  const [cartSelected, setCartSelected] = useState(true);
+
+  const doToggle = () => {
+    if (cartSelected) {
+      setToggle(true);
+    } else {
+      setToggle(false);
+    }
+
+    console.log(toggle);
+  };
+  const manageOnClick = (func) => {
+    func;
+
+    doToggle();
+    console.log(cartSelected);
+  };
+
   return (
     <>
       <div>
@@ -17,10 +46,24 @@ function Dashboard() {
             it all!
           </p>
           <div className="space-x-6">
-            <button className="px-16 py-2 rounded-full font-medium bg-white text-black">
+            <button
+              onClick={() => manageOnClick(setCartSelected(true))}
+              className={`px-16 py-2 rounded-full font-medium ${
+                cartSelected === true
+                  ? "bg-white text-black"
+                  : "bg-none border-2 text-white"
+              } `}
+            >
               Cart
             </button>
-            <button className="px-16 py-2 rounded-full font-medium bg-none border-2 text-white">
+            <button
+              onClick={() => manageOnClick(setCartSelected(false))}
+              className={`px-16 py-2 rounded-full font-medium ${
+                cartSelected === false
+                  ? "text-black bg-white border-none"
+                  : "bg-none border-2 text-white"
+              }`}
+            >
               Whishlist
             </button>
           </div>
@@ -29,14 +72,18 @@ function Dashboard() {
         <div className="flex justify-between items-center center py-8">
           <h1 className="text-2xl font-bold">Cart</h1>
           <div className="flex gap-4 items-center">
-            <p className="text-2xl font-bold">Total cost: 9999$</p>
-            <button className="btn text-primaryColor border-[1px] border-primaryColor text-lg flex justify-center items-center gap-2">
+            <p className="text-2xl font-bold">Total cost: {totalCartAmount}$</p>
+            <button className="btn bg-transparent text-primaryColor border-[1px] border-primaryColor text-lg flex justify-center items-center gap-2">
               Sort by price <GoSortDesc />
             </button>
-            <button className="btn text-white bg-primaryColor text-lg">
+            <button className="btn btn-md rounded-full text-white bg-primaryColor text-xl">
               Purchase
             </button>
           </div>
+        </div>
+        {/* show carts */}
+        <div className="center">
+          {cartSelected ? <Carts></Carts> : <AllWishlist></AllWishlist>}
         </div>
       </div>
     </>

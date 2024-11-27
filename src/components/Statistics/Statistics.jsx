@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import useTitle from "../HeroSection/customHook/customHook";
+import { useTitle } from "../HeroSection/customHook/customHook";
 import {
   ComposedChart,
   XAxis,

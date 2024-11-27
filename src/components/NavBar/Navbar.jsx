@@ -3,7 +3,8 @@ import { FaOpencart } from "react-icons/fa";
 import { CiHeart } from "react-icons/ci";
 import "./nav.css";
 import "../../index.css";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { userData } from "../contexts/Contexts";
 
 export default function Navbar() {
   const location = useLocation();
@@ -11,7 +12,6 @@ export default function Navbar() {
 
   const detailsPath =
     location.pathname === `/${param.categoryName}/${param.id}` ? true : false;
-  console.log(detailsPath);
   const [home, setHome] = useState(true);
   useEffect(() => {
     if (
@@ -27,6 +27,10 @@ export default function Navbar() {
       setHome(false);
     }
   }, [location.state]);
+
+  // getting cart data through context api
+  const userDatas = useContext(userData);
+  const { cart } = userDatas;
 
   return (
     <>
@@ -77,7 +81,7 @@ export default function Navbar() {
               <div className="relative bg-gray-200 rounded-full p-2 cursor-pointer">
                 <FaOpencart />
                 <div className="cart-count">
-                  <span className="">0</span>
+                  <span className="">{cart.length}</span>
                 </div>
               </div>
               {/* wishlist icon */}
