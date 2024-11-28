@@ -12,7 +12,7 @@ function Dashboard() {
 
   // getting user data
   const userDatas = useContext(userData);
-  const { totalCartAmount } = userDatas;
+  let { totalCartAmount, sortCart, cart, cartTotal, showModal } = userDatas;
 
   // toggle to cart to wishlist menu
   const [toggle, setToggle] = useState(true);
@@ -24,14 +24,11 @@ function Dashboard() {
     } else {
       setToggle(false);
     }
-
-    console.log(toggle);
   };
   const manageOnClick = (func) => {
     func;
 
     doToggle();
-    console.log(cartSelected);
   };
 
   return (
@@ -72,11 +69,19 @@ function Dashboard() {
         <div className="flex justify-between items-center center py-8">
           <h1 className="text-2xl font-bold">Cart</h1>
           <div className="flex gap-4 items-center">
-            <p className="text-2xl font-bold">Total cost: {totalCartAmount}$</p>
-            <button className="btn bg-transparent text-primaryColor border-[1px] border-primaryColor text-lg flex justify-center items-center gap-2">
+            <p className="text-2xl font-bold">
+              Total cost: {cartTotal.toFixed(2)}$
+            </p>
+            <button
+              onClick={() => sortCart(cart)}
+              className="btn bg-transparent text-primaryColor border-[1px] border-primaryColor text-lg flex justify-center items-center gap-2 hover:bg-primaryColor hover:text-white hover:rounded-full"
+            >
               Sort by price <GoSortDesc />
             </button>
-            <button className="btn btn-md rounded-full text-white bg-primaryColor text-xl">
+            <button
+              onClick={() => showModal(true)}
+              className="btn btn-md rounded-full text-white bg-primaryColor text-xl  hover:bg-primaryColor "
+            >
               Purchase
             </button>
           </div>

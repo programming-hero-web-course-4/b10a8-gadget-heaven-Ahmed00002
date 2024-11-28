@@ -30,7 +30,7 @@ export default function Navbar() {
 
   // getting cart data through context api
   const userDatas = useContext(userData);
-  const { cart } = userDatas;
+  const { cart, wishlist } = userDatas;
 
   return (
     <>
@@ -88,7 +88,7 @@ export default function Navbar() {
               <div className="relative bg-gray-200 rounded-full p-2 cursor-pointer">
                 <CiHeart />
                 <div className="cart-count">
-                  <p>20</p>
+                  <p>{wishlist.length}</p>
                 </div>
               </div>
             </div>

@@ -5,13 +5,13 @@ import { cartDtls } from "../../contexts/Contexts";
 
 function Carts() {
   const userDatas = useContext(userData);
-  const { cart, totalCost, wishlist } = userDatas;
+  const { cart, wishlist, removeFromCart } = userDatas;
   return (
     <div className="space-y-4">
       {cart.map((product) => (
         <cartDtls.Provider
           key={product.product_id}
-          value={{ product, totalCost, wishlist }}
+          value={{ product, wishlist, removeFromCart }}
         >
           <CartDetails></CartDetails>
         </cartDtls.Provider>

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ReactStars from "react-rating-stars-component";
 import { useLoaderData, useParams } from "react-router-dom";
 import { IoMdStarOutline, IoMdStar, IoMdStarHalf } from "react-icons/io";
@@ -29,11 +29,13 @@ function PDetails() {
 
   // context api
   const userDatas = useContext(userData);
-  const { cart, wishlist, updateOrGetCart, updateOrGetWishlist } = userDatas;
+  const { wishlist, updateOrGetCart, updateOrGetWishlist, countPrice } =
+    userDatas;
 
   // cart button on click
   const addToCart = () => {
     updateOrGetCart(mainData[0]);
+    countPrice(price);
   };
 
   // add data to the wishlist
@@ -47,9 +49,20 @@ function PDetails() {
    * them the wishlist button will be disabled
    * else it will be normal
    * */
-  if (wishlist.length != 0) {
-    wishlist.map((data) => console.log(data));
-  }
+  const [found, setFound] = useState(false);
+  useEffect(() => {
+    if (wishlist.length != 0) {
+      wishlist.map((data) => {
+        if (data.product_id === mainData[0].product_id) {
+          console.log("found");
+          setFound(true);
+        } else {
+          setFound(false);
+        }
+      });
+    }
+  }, [wishlist]);
+
   return (
     <>
       {/* dashboard section header */}
@@ -138,6 +151,7 @@ function PDetails() {
                 Add To Cart <FaOpencart />
               </button>
               <button
+                disabled={found ? true : false}
                 onClick={addToWishlist}
                 className="btn  btn-circle text-2xl bg-transparent border-paraColor hover:bg-pink-500 hover:text-white hover:border-none"
               >

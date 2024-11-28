@@ -1,14 +1,11 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { cartDtls } from "../../contexts/Contexts";
 import { FaDeleteLeft } from "react-icons/fa6";
 
 function CartDetails() {
   const datas = useContext(cartDtls);
-  const { product, totalCost } = datas;
+  const { product, removeFromCart } = datas;
   const { product_title, price, description, product_image } = product;
-  useEffect(() => {
-    totalCost(price);
-  }, []);
 
   return (
     <>
@@ -28,7 +25,7 @@ function CartDetails() {
           </p>
         </div>
         <div className="col-span-2 flex items-center justify-end mr-8 text-2xl text-gray-500 hover:text-red-500 cursor-pointer">
-          <FaDeleteLeft />
+          <FaDeleteLeft onClick={() => removeFromCart(product, true)} />
         </div>
       </div>
     </>

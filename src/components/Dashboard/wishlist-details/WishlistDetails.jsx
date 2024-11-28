@@ -4,8 +4,12 @@ import { wishlistDtls } from "../../contexts/Contexts";
 
 function CartDetails() {
   const datas = useContext(wishlistDtls);
-  //   const { wishProduct } = datas;
-  const { product_title, price, description, product_image } = datas;
+  const { wishProduct, removeFromCart, updateOrGetCart } = datas;
+  const { product_title, price, description, product_image } = wishProduct;
+  const handleOnAdd = () => {
+    updateOrGetCart(wishProduct);
+    removeFromCart(wishProduct, false);
+  };
 
   return (
     <>
@@ -24,12 +28,18 @@ function CartDetails() {
             Price: {price}$
           </p>
           <div>
-            <button className="btn btn-sm bg-primaryColor text-white rounded-full hover:bg-transparent hover:border-[1px] hover:border-primaryColor hover:text-primaryColor">
+            <button
+              onClick={handleOnAdd}
+              className="btn btn-sm bg-primaryColor text-white rounded-full hover:bg-transparent hover:border-[1px] hover:border-primaryColor hover:text-primaryColor"
+            >
               Add To Cart
             </button>
           </div>
         </div>
-        <div className="col-span-2 flex items-center justify-end mr-8 text-2xl text-gray-500 hover:text-red-500 cursor-pointer">
+        <div
+          onClick={() => removeFromCart(wishProduct, false)}
+          className="col-span-2 flex items-center justify-end mr-8 text-2xl text-gray-500 hover:text-red-500 cursor-pointer"
+        >
           <FaDeleteLeft />
         </div>
       </div>
