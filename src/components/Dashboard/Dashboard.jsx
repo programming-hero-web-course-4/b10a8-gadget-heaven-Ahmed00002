@@ -80,6 +80,7 @@ function Dashboard() {
             </button>
             <button
               onClick={() => showModal(true)}
+              disabled={cart.length === 0 && true}
               className="btn btn-md rounded-full text-white bg-primaryColor text-xl  hover:bg-primaryColor "
             >
               Purchase
