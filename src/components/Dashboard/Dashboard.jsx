@@ -67,21 +67,31 @@ function Dashboard() {
         </div>
         {/* cart details and info */}
         <div className="flex justify-between items-center center py-8">
-          <h1 className="text-2xl font-bold">Cart</h1>
+          <h1 className="text-2xl font-bold">
+            {cartSelected ? "Cart" : "Wishlist"}
+          </h1>
           <div className="flex gap-4 items-center">
-            <p className="text-2xl font-bold">
+            <p
+              className={`text-2xl font-bold ${
+                cartSelected === false && "hidden"
+              }`}
+            >
               Total cost: {cartTotal.toFixed(2)}$
             </p>
             <button
               onClick={() => sortCart(cart)}
-              className="btn bg-transparent text-primaryColor border-[1px] border-primaryColor text-lg flex justify-center items-center gap-2 hover:bg-primaryColor hover:text-white hover:rounded-full"
+              className={`btn bg-transparent text-primaryColor border-[1px] border-primaryColor text-lg flex justify-center items-center gap-2 hover:bg-primaryColor hover:text-white hover:rounded-full ${
+                cartSelected === false && "hidden"
+              }`}
             >
               Sort by price <GoSortDesc />
             </button>
             <button
               onClick={() => showModal(true)}
               disabled={cart.length === 0 && true}
-              className="btn btn-md rounded-full text-white bg-primaryColor text-xl  hover:bg-primaryColor "
+              className={`btn btn-md rounded-full text-white bg-primaryColor text-xl  hover:bg-primaryColor ${
+                cartSelected === false && "hidden"
+              }`}
             >
               Purchase
             </button>
