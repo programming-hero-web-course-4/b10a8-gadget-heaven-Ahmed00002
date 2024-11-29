@@ -44,16 +44,15 @@ const router = createBrowserRouter([
         },
       },
       {
-        path: ":categoryName",
+        path: "/category/:categoryName",
         element: <Hero />,
         loader: async ({ params }) => {
           const res = await fetch("/data.json");
           const data = await res.json();
-          console.log(data);
           const category = data.filter(
             (category) => category.category_name == params.categoryName
           );
-          console.log(category);
+
           return category;
         },
       },

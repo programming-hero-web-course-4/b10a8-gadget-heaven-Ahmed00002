@@ -2,7 +2,7 @@ import "../../index.css";
 import cameraImg from "../../assets/banner.jpg";
 import Gadgets from "../AllGadgets/Gadgets";
 import { useTitle } from "./customHook/customHook";
-import { useLoaderData, useLocation } from "react-router-dom";
+import { NavLink, useLoaderData, useLocation } from "react-router-dom";
 import { AllGadgetsData } from "../contexts/Contexts";
 // import { userCart } from "../contexts/Contexts";
 function Hero() {
@@ -22,9 +22,11 @@ function Hero() {
               next level. From smart devices to the coolest accessories, we have
               it all!
             </p>
-            <button className="px-8 py-2 rounded-full bg-white text-black font-bold">
-              Shop Now
-            </button>
+            <NavLink to={"/dashboard"} state={"dashboard"}>
+              <button className="px-8 py-2 rounded-full bg-white text-black font-bold">
+                Shop Now
+              </button>
+            </NavLink>
           </div>
           {/* camera div */}
           <div>

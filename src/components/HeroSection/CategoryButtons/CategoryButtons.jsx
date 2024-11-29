@@ -9,13 +9,13 @@ function CategoryButtons() {
           <NavLink to={"/"}>
             <button className="category-btn w-full">All Products</button>
           </NavLink>
-          <NavLink to={"/Laptop"}>
+          <NavLink to={"/category/Laptop"}>
             <button className="category-btn w-full">Laptops</button>
           </NavLink>
-          <NavLink to={"/Mobile"}>
+          <NavLink to={"/category/Mobile"}>
             <button className="category-btn w-full">Phones</button>
           </NavLink>
-          <NavLink to={"/Gadgets"}>
+          <NavLink to={"/category/Gadgets"}>
             <button className="category-btn w-full">Smart Gadget</button>
           </NavLink>
         </div>
