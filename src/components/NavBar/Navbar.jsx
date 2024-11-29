@@ -43,17 +43,19 @@ export default function Navbar() {
           }  center mt-4`}
         >
           <div
-            className={`grid grid-cols-3 items-center justify-center   ${
+            className={`grid grid-cols-4 items-center justify-center   ${
               home && !detailsPath
                 ? "bg-primaryColor text-white"
                 : "bg-white text-black"
             } py-6 rounded-t-xl px-12`}
           >
             <div>
-              <h1 className="text-2xl font-semibold">Gadget Haven</h1>
+              <h1 className="text-2xl font-semibold col-span-1">
+                Gadget Haven
+              </h1>
             </div>
             {/* navLinks */}
-            <div className="flex justify-center items-center gap-6 sidebar">
+            <div className="flex justify-center items-center gap-6 sidebar col-span-2">
               <NavLink
                 className="px-4 py-1 rounded-full"
                 state={"home"}
@@ -73,10 +75,17 @@ export default function Navbar() {
                 state={"statistics"}
                 to={"/statistics"}
               >
-                Statics
+                Statistics
+              </NavLink>
+              <NavLink
+                className="px-4 py-1 rounded-full"
+                state={"statistics"}
+                to={"/about-us"}
+              >
+                About Us
               </NavLink>
             </div>
-            <div className="justify-self-end flex items-center gap-6 text-lg  text-black">
+            <div className="justify-self-end flex items-center gap-6 text-lg  text-black col-span-1">
               {/* cart icon */}
               <div className="relative bg-gray-200 rounded-full p-2 cursor-pointer">
                 <FaOpencart />

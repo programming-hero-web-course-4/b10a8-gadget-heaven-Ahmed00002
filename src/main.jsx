@@ -8,6 +8,7 @@ import Hero from "./components/HeroSection/Hero";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Statistics from "./components/Statistics/Statistics";
 import PDetails from "./components/Full-PDetails/PDetails";
+import AboutUs from "./components/AboutUs/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,16 @@ const router = createBrowserRouter([
         loader: async () => {
           const res = await fetch("/data.json");
           const data = await res.json();
+          return data;
+        },
+      },
+      {
+        path: "/about-us",
+        element: <AboutUs />,
+        loader: async () => {
+          const res = await fetch("/features.json");
+          const data = await res.json();
+
           return data;
         },
       },
